@@ -1,11 +1,12 @@
 <h1>Your Shopping Cart</h1>
 <ul>
-  <% session[:cart].each do |item| %>
-    <li><%= item %></li>
+  <% session[:cart].each do |product| %>
+    <li><%= product %></li>
   <% end %>
 </ul>
 
-<%= form_for("/") do %>
-  Item: <%= text_field_tag "item" %>
-  <%= submit_tag "Add to Cart"
+<%= form_tag('/add', method: 'post') do %>
+  <%= label_tag :product %>
+  <%= text_field_tag :product %>
+  <%= submit_tag "Add to Cart" %>
 <% end %>
