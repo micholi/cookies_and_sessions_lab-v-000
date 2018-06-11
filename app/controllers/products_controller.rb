@@ -6,7 +6,7 @@ class ProductsController < ApplicationController
 
   def add
     cart << params[:product]
-    render 'products/index'
+    redirect_to '/'
   end
 
 end
